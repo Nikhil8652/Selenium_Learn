@@ -49,7 +49,7 @@ public class FirstSeleniumTest {
 
     public void search() throws InterruptedException {
         Thread.sleep(2000);
- 
+
         WebElement search = driver.findElement(By.className("oxd-input"));
         search.sendKeys("Hello");
     }
