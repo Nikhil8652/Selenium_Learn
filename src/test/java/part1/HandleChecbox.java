@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.List;
 
 public class HandleChecbox {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://testautomationpractice.blogspot.com/");
@@ -31,8 +31,30 @@ public class HandleChecbox {
 
         //3)select last 3 checkboxes
 
-        for (int i = 4; i < checboxes.size(); i++) {
+//        for (int i = 4; i < checboxes.size(); i++) {
+//            checboxes.get(i).click();
+//        }
+
+        //select first 3 chceckboxes
+//        for (int i = 0; i < 3; i++) {
+//            checboxes.get(i).click();
+//        }
+        //unselect checkboxes if they are selected
+//        for (WebElement checkbox : checboxes) {
+//            checkbox.click();
+//        }
+
+        for (int i = 0; i < 3; i++) {
             checboxes.get(i).click();
+        }
+
+        Thread.sleep(5000);
+
+        for (int i = 0; i < checboxes.size(); i++) {
+            if (checboxes.get(i).isSelected()) {
+                checboxes.get(i).click();
+            }
+
         }
     }
 }
